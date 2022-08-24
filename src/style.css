@@ -1,0 +1,16 @@
+*, html, a {
+    box-sizing: border-box;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+header {
+    background-color: red;
+    text-align: center;
+    padding: 5px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
