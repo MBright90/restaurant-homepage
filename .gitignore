@@ -1,1 +1,2 @@
+# Ignoring node_modules folder to reduce bandwith. These are installed via package.json.
 */node_modules
