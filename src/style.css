@@ -34,6 +34,8 @@ body {
     font-family: 'sinkinsans-regular', 'sans-serif';
 }
 
+/* Header styling */
+
 header {
     background-color: #7FB77E;
     text-align: center;
@@ -62,4 +64,13 @@ header ul li a {
     color: #FFFFFF;
     letter-spacing: 2px;
     margin: 3% 0;
+}
+
+
+/* General main styling */
+
+main {
+    background-color: red;
+    margin: 0 20%;
+    height: 70vh;
 }
