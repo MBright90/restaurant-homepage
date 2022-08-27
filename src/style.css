@@ -6,11 +6,55 @@
     text-decoration: none;
 }
 
+@font-face {
+    font-family: 'alexbrush';
+    src: url('./alexbrush-regular-webfont.woff2') format('woff2'),
+         url('./alexbrush-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sinkinsans-regular';
+    src: url('./sinkinsans-400regular-webfont.woff2') format('woff2'),
+         url('./sinkinsans-400regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sinkinsans-bold';
+    src: url('./sinkinsans-900xblack-webfont.woff2') format('woff2'),
+         url('./sinkinsans-900xblack-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'sinkinsans-regular', 'sans-serif';
+}
+
 header {
-    background-color: red;
+    background-color: #7FB77E;
     text-align: center;
-    padding: 5px auto;
+    padding: 10px auto;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
+}
+
+header h1 {
+    color: #FFFFFF;
+    font-family: 'alexbrush', 'cursive';
+    font-size: 3rem;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul a {
+    color: #FFFFFF;
+    display: inline-block;
+    letter-spacing: 2px;
 }
