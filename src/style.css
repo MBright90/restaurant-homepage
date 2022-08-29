@@ -38,11 +38,12 @@ body {
 
 header {
     background-color: #7FB77E;
+    position: relative;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
 
@@ -67,8 +68,14 @@ header ul li {
 header ul li a {
     color: #FFFFFF;
     letter-spacing: 2px;
+    padding-bottom: 4px;
+
+    transition: all ease-in .1s;
 }
 
+header ul .active {
+    border-bottom: 2px solid #FFFFFF;
+}
 
 /* General main styling */
 
