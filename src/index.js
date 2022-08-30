@@ -38,11 +38,21 @@ const createHeader = () => {
 
     header.appendChild(headerLogo);
     header.appendChild(headerTabContainer);
+
+    document.body.appendChild(header);
 };
 
 const createFooter = () => {
     const footer = document.createElement('Footer')
+
+    const footerLink = document.createElement('a');
+    footerLink.href = 'https://github.com/MBright90/restaurant-homepage';
+
+    footer.appendChild(footerLink);
+
+    document.body.appendChild(footer);
 }
+
 
 const createHomepage = () => {
     const mainContainer = document.createElement("main")
