@@ -52,9 +52,10 @@ const createFooter = () => {
     footer.appendChild(footerLink);
 
     document.body.appendChild(footer);
-}
+};
 
 const createHomepage = () => {
+    const mainToRemove = document.querySelector("main");
     const mainContainer = document.createElement("main");
 
     const homepageImage = document.createElement("div");
@@ -63,9 +64,9 @@ const createHomepage = () => {
     const informationContainer = document.createElement("div");
 
     const paraOne = document.createElement("p");
-    paraOne.textContent = "We believe food is humanity's most loyal friend. At Bellamy's, we strive to show that friend just how much we love them. We do this by taking the utmost care with our ingredients, endeavouring to treat each part of your meal, no matter how small, with affection. We source local, sustainable ingredients that our chefs have personally taste tested at source to bring you the highest quality meals possible."
+    paraOne.textContent = "We believe food is humanity's most loyal friend. At Bellamy's, we strive to show that friend just how much we love them. We do this by taking the utmost care with our ingredients, endeavouring to treat each part of your meal, no matter how small, with affection. We source local, sustainable ingredients that our chefs have personally taste tested at source to bring you the highest quality meals possible.";
     const paraTwo = document.createElement("p");
-    paraTwo.textContent = "So come on down to Bellamy's. Where the food, the staff and the atmosphere will be like visiting your oldest friends."
+    paraTwo.textContent = "So come on down to Bellamy's. Where the food, the staff and the atmosphere will be like visiting your oldest friends.";
 
     informationContainer.appendChild(paraOne);
     informationContainer.appendChild(paraTwo);
@@ -73,13 +74,24 @@ const createHomepage = () => {
     mainContainer.appendChild(homepageImage);
     mainContainer.appendChild(informationContainer);
 
+    mainToRemove.remove();
     document.body.appendChild(mainContainer);
-}
+};
 
 const createMenuPage = () => {
+    const mainToRemove = document.querySelector("main");
+    const mainContainer = document.createElement("main");
+
+    const introContainer = document.createElement("div");
+    const introSentence = document.createElement("p");
+    introSentence.textContent = "Below is an example of a typical menu at Bellamy's. Due to the nature in which we source our ingredients, our menu is constantly evolving.";
+    introContainer.appendChild(introSentence);
+
+    
+
     const toDo = "to be created"
-}
+};
 
 const createContactPage = () => {
     const toDo = "to be created"
-}
+};
