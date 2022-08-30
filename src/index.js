@@ -22,6 +22,7 @@ const createHeader = () => {
 
     const tabTwo = document.createElement("li");
     const homepageLink = document.createElement("a");
+    homepageLink.classList.add("active");
     homepageLink.textContent = "Homepage";
     tabTwo.appendChild(homepageLink);
 
@@ -43,17 +44,42 @@ const createHeader = () => {
 };
 
 const createFooter = () => {
-    const footer = document.createElement('Footer')
+    const footer = document.createElement("Footer")
 
-    const footerLink = document.createElement('a');
-    footerLink.href = 'https://github.com/MBright90/restaurant-homepage';
+    const footerLink = document.createElement("a");
+    footerLink.href = "https://github.com/MBright90/restaurant-homepage";
 
     footer.appendChild(footerLink);
 
     document.body.appendChild(footer);
 }
 
-
 const createHomepage = () => {
-    const mainContainer = document.createElement("main")
+    const mainContainer = document.createElement("main");
+
+    const homepageImage = document.createElement("div");
+    homepageImage.classList.add("main-image");
+
+    const informationContainer = document.createElement("div");
+
+    const paraOne = document.createElement("p");
+    paraOne.textContent = "We believe food is humanity's most loyal friend. At Bellamy's, we strive to show that friend just how much we love them. We do this by taking the utmost care with our ingredients, endeavouring to treat each part of your meal, no matter how small, with affection. We source local, sustainable ingredients that our chefs have personally taste tested at source to bring you the highest quality meals possible."
+    const paraTwo = document.createElement("p");
+    paraTwo.textContent = "So come on down to Bellamy's. Where the food, the staff and the atmosphere will be like visiting your oldest friends."
+
+    informationContainer.appendChild(paraOne);
+    informationContainer.appendChild(paraTwo);
+
+    mainContainer.appendChild(homepageImage);
+    mainContainer.appendChild(informationContainer);
+
+    document.body.appendChild(mainContainer);
+}
+
+const createMenuPage = () => {
+    const toDo = "to be created"
+}
+
+const createContactPage = () => {
+    const toDo = "to be created"
 }
