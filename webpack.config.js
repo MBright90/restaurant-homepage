@@ -10,6 +10,7 @@ module.exports = {
     },
     module: {
         rules: [
+            // Webpack installed Loaders
             {
                 test: /\.css$/i,
                 use: [
@@ -18,13 +19,19 @@ module.exports = {
                 ]
             },
             {
+                test: /\.csv$/i,
+                use: 'csv-loader'
+            },
+            
+            // Resources
+            {
                 test: /\.(woff|woff2)$/i,
                 type: 'asset/resource'
             },
             {
                 test: /\.(jpeg|jpg|svg|png)$/i,
                 type: 'asset/resource'
-            }
+            },
         ]
     }
 };
