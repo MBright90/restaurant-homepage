@@ -1,6 +1,9 @@
 import './style.css'
+
+// Importing images //
 import GitIcon from './GitHub-Mark-Light-64px.png'
-import HomeImage from './main-food-photo.jpeg'  
+import HomeImage from './main-food-photo.jpeg'
+import duckLegImage from '/duck-leg.jpg'
 
 console.log('Do not worry, this is working')
 
@@ -87,7 +90,7 @@ const createMenuPage = () => {
     introSentence.textContent = "Below is an example of a typical menu at Bellamy's. Due to the nature in which we source our ingredients, our menu is constantly evolving.";
     introContainer.appendChild(introSentence);
 
-    
+
 
     const toDo = "to be created"
 };
