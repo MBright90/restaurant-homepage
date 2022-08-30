@@ -1,4 +1,5 @@
 import './style.css'
+import MenuData from './menu-data.csv'
 
 // Importing images //
 import GitIcon from './GitHub-Mark-Light-64px.png'
@@ -91,8 +92,6 @@ const createMenuPage = () => {
     introContainer.appendChild(introSentence);
 
 
-
-    const toDo = "to be created"
 };
 
 const createContactPage = () => {
