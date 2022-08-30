@@ -38,7 +38,7 @@ body {
 
 header {
     background-color: #7FB77E;
-    position: relative;
+    position: sticky;
     text-align: center;
     padding: 10px 0;
     display: flex;
@@ -83,4 +83,19 @@ main {
     background-color: red;
     margin: 0 20%;
     height: 70vh;
+}
+
+main .information {
+    background-color: blue;
+}
+
+main .main-image {
+    background-color: yellow;
+    position: relative;
+    display: relative;
+}
+
+main .main-image::before {
+    content: "";
+    position: relative;
 }
