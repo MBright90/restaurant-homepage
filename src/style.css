@@ -209,7 +209,6 @@ main .drinks-container {
 }
 
 main .drinks-container .drinks-image {
-    background-color: red;
     background-image: url('drink-picture.jpg');
     background-position: center;
     background-size: cover;
