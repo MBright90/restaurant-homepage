@@ -20,9 +20,9 @@ module.exports = {
             },
             {
                 test: /\.csv$/i,
-                use: 'csv-loader'
+                use: ['csv-loader'],
             },
-            
+
             // Resources
             {
                 test: /\.(woff|woff2)$/i,
