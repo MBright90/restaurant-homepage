@@ -205,15 +205,14 @@ main .menu-stack .item-card .item-price::before {
 main .drinks-container {
     background-color: #FFFFFF;
     display: flex;
-    min-height: 500px;
     margin-bottom: 20px;
 }
 
 main .drinks-container .drinks-image {
+    background-color: red;
     background-image: url('drink-picture.jpg');
     background-position: center;
     background-size: cover;
-    min-height: 500px;
     width: 300px;
 }
 
