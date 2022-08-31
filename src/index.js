@@ -1,12 +1,14 @@
-import './style.css'
-import MenuData from './menu-data.csv'
+import './style.css';
+import DrinkData from './drinks-data.csv';
+import MenuData from './menu-data.csv';
 
-// Importing images //
-import GitIcon from './GitHub-Mark-Light-64px.png'
-import HomeImage from './main-food-photo.jpeg'
-import duckLegImage from '/duck-leg.jpg'
+// // Importing images //
+// import GitIcon from './GitHub-Mark-Light-64px.png'
+// import HomeImage from './main-food-photo.jpeg'
+// import duckLegImage from '/duck-leg.jpg'
 
-console.log('Do not worry, this is working')
+console.log(DrinkData)
+console.log(MenuData)
 
 const createHeader = () => {
     const header = document.createElement("header");
