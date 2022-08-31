@@ -7,7 +7,7 @@ import MenuData from './menu-data.csv';
 // import HomeImage from './main-food-photo.jpeg'
 // import duckLegImage from '/duck-leg.jpg'
 
-console.log(DrinkData)
+console.log(DrinkData[1])
 console.log(MenuData)
 
 const createHeader = () => {
@@ -93,6 +93,42 @@ const createMenuPage = () => {
     introSentence.textContent = "Below is an example of a typical menu at Bellamy's. Due to the nature in which we source our ingredients, our menu is constantly evolving.";
     introContainer.appendChild(introSentence);
 
+
+    // Creating menu grid
+    const menuStack = document.createElement("div");
+    menuStack.classList.add("menu-stack");
+
+    MenuData.forEach(menuItem => {
+        const itemCard = document.createElement("div");
+        itemCard.classList.add("item-card");
+
+        const itemImage = document.createElement("div");
+        itemImage.classList.add("item-image");
+        itemImage.style.backgroundImage = `url('./'${menuItem[0]})`
+
+        const itemTitle = document.createElement("div");
+        itemTitle.classList.add("item-title");
+        itemTitle.textContent = menuItem[1];
+
+        const itemDetails = document.createElement("div");
+        itemDetails.classList.add("item-details");
+        itemDetails.textContent = menuItem[2];
+
+        const itemPrice = document.createElement("div");
+        itemPrice.classList.add("item-price");
+        itemPrice.textContent = menuItem[3];
+
+        itemCard.appendChild(itemImage);
+        itemCard.appendChild(itemTitle);
+        itemCard.appendChild(itemDetails);
+        itemCard.appendChild(itemPrice);
+
+        menuStack.appendChild(itemCard);
+        }
+    );
+
+    // creating drinks menu
+    const drinksContainer = document.createElement("div");
 
 };
 
