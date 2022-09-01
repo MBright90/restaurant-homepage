@@ -232,6 +232,7 @@ main .drinks-container .drinks-information .drink-item:first-of-type {
 
 main .drinks-container .drinks-information .drink-item:last-of-type {
     border-bottom: 2px solid #7FB77E;
+    margin-bottom: 5px;
 }
 
 main .drinks-container .drinks-information .drink-item .drink-price {
