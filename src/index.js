@@ -136,8 +136,32 @@ const createMenuPage = () => {
 
     const drinksInformation = document.createElement("div");
     drinksInformation.classList.add("drinks-information");
+    const drinksHeader = document.createElement("h1");
+    drinksHeader.textContent = "Drinks";
 
+    drinksInformation.appendChild(drinksHeader);
 
+    DrinkData.forEach(drinkItem => {
+        const drinkCard = document.createElement("div");
+        drinkCard.classList.add("drink-item");
+
+        const drinkTitle = document.createElement("p");
+        drinkTitle.textContent = drinkItem[0];
+        drinkTitle.classList.add("drink-title");
+
+        const drinkDescription = document.createElement("p");
+        drinkDescription.textContent = drinkItem[1];
+
+        const drinkPrice = document.createElement("p");
+        drinkPrice.textContent = drinkItem[2];
+        drinkPrice.classList.add("drink-price");
+
+        drinkCard.appendChild(drinkTitle);
+        drinkCard.appendChild(drinkDescription);
+        drinkCard.appendChild(drinkPrice);
+
+        drinksInformation.appendChild(drinkCard);
+    })
 
 };
 
