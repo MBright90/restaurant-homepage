@@ -89,6 +89,7 @@ const createMenuPage = () => {
     const mainContainer = document.createElement("main");
 
     const introContainer = document.createElement("div");
+    introContainer.classList.add("menu-intro")
     const introSentence = document.createElement("p");
     introSentence.textContent = "Below is an example of a typical menu at Bellamy's. Due to the nature in which we source our ingredients, our menu is constantly evolving.";
     introContainer.appendChild(introSentence);
@@ -162,6 +163,16 @@ const createMenuPage = () => {
 
         drinksInformation.appendChild(drinkCard);
     })
+
+    drinksContainer.appendChild(drinksImage);
+    drinksContainer.appendChild(drinksInformation);
+
+    mainContainer.appendChild(introContainer);
+    mainContainer.appendChild(menuStack);
+    mainContainer.appendChild(drinksContainer);
+
+    mainToRemove.remove();
+    document.body.appendChild(mainContainer);
 
 };
 
