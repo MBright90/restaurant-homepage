@@ -1,6 +1,6 @@
 import './style.css';
-import DrinkData from './drinks-data.csv';
-import MenuData from './menu-data.csv';
+// import DrinkData from './drinks-data.csv';
+// import MenuData from './menu-data.csv';
 
 // // Importing images //
 // import GitIcon from './GitHub-Mark-Light-64px.png'
@@ -63,6 +63,7 @@ const createFooter = () => {
 const createHomepage = () => {
     const mainToRemove = document.querySelector("main");
     const mainContainer = document.createElement("main");
+    mainContainer.style.flexDirection = "row";
 
     const homepageImage = document.createElement("div");
     homepageImage.classList.add("main-image");
@@ -87,6 +88,7 @@ const createHomepage = () => {
 const createMenuPage = () => {
     const mainToRemove = document.querySelector("main");
     const mainContainer = document.createElement("main");
+    mainContainer.style.flexDirection = "column";
 
     const introContainer = document.createElement("div");
     introContainer.classList.add("menu-intro")
