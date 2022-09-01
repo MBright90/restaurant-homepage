@@ -86,7 +86,6 @@ header ul .active {
 
 main {
     display: flex;
-    flex-direction: column;
     gap: 20px;
     margin: 0 15%;
     min-height: calc(100vh - 156px);
@@ -232,7 +231,7 @@ main .drinks-container .drinks-information .drink-item:first-of-type {
 
 main .drinks-container .drinks-information .drink-item:last-of-type {
     border-bottom: 2px solid #7FB77E;
-    margin-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 main .drinks-container .drinks-information .drink-item .drink-price {
