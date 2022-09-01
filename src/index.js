@@ -94,7 +94,7 @@ const createMenuPage = () => {
     introContainer.appendChild(introSentence);
 
 
-    // Creating menu grid
+    // Creating food menu grid
     const menuStack = document.createElement("div");
     menuStack.classList.add("menu-stack");
 
@@ -129,6 +129,15 @@ const createMenuPage = () => {
 
     // creating drinks menu
     const drinksContainer = document.createElement("div");
+    drinksContainer.classList.add("drinks-container");
+
+    const drinksImage = document.createElement("div");
+    drinksImage.classList.add("drinks-image");
+
+    const drinksInformation = document.createElement("div");
+    drinksInformation.classList.add("drinks-information");
+
+
 
 };
 
