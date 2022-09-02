@@ -221,7 +221,8 @@ main .drinks-container .drinks-information {
     width: 100%;
 }
 
-main .drinks-container .drinks-information h1 {
+main .drinks-container .drinks-information h1,
+main .form-container h1 {
     font-family: 'alexbrush', 'cursive';
 }
 
@@ -236,6 +237,44 @@ main .drinks-container .drinks-information .drink-item:last-of-type {
 
 main .drinks-container .drinks-information .drink-item .drink-price {
     text-align: right;
+}
+
+/* Contact styling */
+
+.form-container {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label:first-of-type {
+    margin-top: 10px;
+}
+
+.form-container form input[type=text],
+.form-container form textarea {
+    font-family: 'sinkinsans-regular', 'sans-serif';
+    letter-spacing: 2px;
+    padding: 2px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+.form-container form button {
+    align-self: flex-end;
+    background-color: inherit;
+    border: none;
+    border-bottom: 2px solid #7FB77E;
+    font-family: 'sinkinsans-regular', 'sans-serif';
+    padding: 5px;
+    width: 100px;
 }
 
 /* Footer */
