@@ -32,7 +32,7 @@
 }
 
 body {
-    background-color: #e2ddd7;
+    background-color: #e9e9e9b2;
     font-family: 'sinkinsans-regular', 'sans-serif';
     letter-spacing: 2px;
 }
@@ -222,7 +222,8 @@ main .drinks-container .drinks-information {
 }
 
 main .drinks-container .drinks-information h1,
-main .form-container h1 {
+main .form-container h1,
+main .map-container h1 {
     font-family: 'alexbrush', 'cursive';
 }
 
@@ -241,12 +242,18 @@ main .drinks-container .drinks-information .drink-item .drink-price {
 
 /* Contact styling */
 
-.form-container {
+.form-container,
+.map-container {
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     margin: 20px 0;
     padding: 20px;
+}
+
+.map-container {
+    flex-grow: 1;
+    min-width: 440px;
 }
 
 .form-container form {
@@ -275,6 +282,18 @@ main .drinks-container .drinks-information .drink-item .drink-price {
     font-family: 'sinkinsans-regular', 'sans-serif';
     padding: 5px;
     width: 100px;
+}
+
+.map-container .map {
+    background-color: red;
+    height: 400px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.map-container .address {
+    border-left: 2px solid #7FB77E;
+    padding-left: 10px;
 }
 
 /* Footer */
