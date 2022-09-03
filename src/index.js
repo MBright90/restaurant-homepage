@@ -30,6 +30,13 @@ const classElementCreate = (newElement, ...args) => {
     return element;
 };
 
+const replaceFooter = () => {
+
+    let footerToRemove;
+    if (footerToRemove = document.querySelector("footer")) footerToRemove.remove();
+    createFooter();
+}
+
 const initTabLinks = () => {
     const tabList = document.querySelectorAll("li>a");
     tabList.forEach(tabLink => {
@@ -38,7 +45,7 @@ const initTabLinks = () => {
             if (e.target === tabList[0]) {
                 createMenuPage();
             } else if (e.target === tabList[1]) {
-                console.log("Homepage")
+                createHomepage();
             } else {
                 console.log("Contact Us")
             };
@@ -133,6 +140,7 @@ const createHomepage = () => {
     };
 
     document.body.appendChild(mainContainer);
+    replaceFooter();
 };
 
 const createMenuPage = () => {
@@ -206,7 +214,7 @@ const createMenuPage = () => {
         drinkPrice.textContent = drinkItem[2];
         drinkPrice.classList.add("drink-price");
 
-        appendMultiple(drinkcard, [drinkTitle, drinkDescription, drinkPrice]);
+        appendMultiple(drinkCard, [drinkTitle, drinkDescription, drinkPrice]);
         drinksInformation.appendChild(drinkCard);
     })
 
@@ -215,6 +223,7 @@ const createMenuPage = () => {
 
     mainToRemove.remove();
     document.body.appendChild(mainContainer);
+    replaceFooter();
 };
 
 const createContactPage = () => {
@@ -307,10 +316,10 @@ const createContactPage = () => {
 
     mainToRemove.remove();
     document.body.appendChild(mainContainer);
+    replaceFooter();
 };
 
 //Initialize homepage
 
 createHeader();
 createHomepage();
-createFooter();
