@@ -1,4 +1,3 @@
-import { arguments } from 'file-loader';
 import './style.css';
 // import DrinkData from './drinks-data.csv';
 // import MenuData from './menu-data.csv';
@@ -17,14 +16,14 @@ const appendMultiple = (parent, children) => {
     });
 };
 
-const setAttributes = (element, attributeObject) => {
+const setAttributes = (newElement, attributeObject) => {
     for(const key in attributeObject) {
-        element.setAttribute(key, attributeObject[key])
+        newElement.setAttribute(key, attributeObject[key])
     }
 };
 
-const classElementCreate = (element, ...args) => {
-    const element = document.createElement(element);
+const classElementCreate = (newElement, ...args) => {
+    const element = document.createElement(newElement);
     for (let i = 1; i < args.length; i++) {
         element.classList.add(args[i]);
     };
@@ -249,9 +248,7 @@ const createContactPage = () => {
     };
 
     const createMap = () => {
-        const mapSectionContainer = document.createElement("div");
-        mapSectionContainer.classList.add("map-container");
-
+        const mapSectionContainer = classElementCreate("div", "map-container")
         const mapHeader = document.createElement("h1");
         mapHeader.textContent = "Find Us";
 
