@@ -10,6 +10,18 @@ import './style.css';
 console.log(DrinkData[1])
 console.log(MenuData)
 
+const appendMultiple = (parent, children) => {
+    for(const child in children) {
+        parent.appendChild(child);
+    };
+};
+
+const setAttributes = (element, attributeObject) => {
+    for(const key in attributeObject) {
+        element.setAttribute(key, attributeObject[key])
+    }
+}
+
 const createHeader = () => {
     const header = document.createElement("header");
     
@@ -179,5 +191,52 @@ const createMenuPage = () => {
 };
 
 const createContactPage = () => {
-    const toDo = "to be created"
+
+    const setAttributes = (element, attributeObject) => {
+        for(const key in attributeObject) {
+            element.setAttribute(key, attributeObject[key])
+        }
+    }
+
+    const mainToRemove = document.querySelector("main");
+    const mainContainer = document.createElement("main");
+    mainContainer.style.flexDirection = "row";
+
+    const formContainer = document.createElement("div");
+    formContainer.classList.add("form-container");
+
+    const formHeader = document.createElement("h1");
+    formHeader.textContent = "Contact Us";
+
+    const form = document.createElement("form");
+    form.setAttribute("method", "POST");
+
+    //Name field
+    const labelName = document.createElement("label");
+    labelName.setAttribute("for", "name-input");
+    const inputName = document.createElement("input")
+    setAttributes(
+        {"type": "text",
+         "name": "name-input",
+         "id": "name-input"}
+    )
+
+    //Email field
+    const labelEmail = document.createElement("label");
+    labelEmail.setAttribute("for", "email-input")
+    const inputEmail = document.createElement("input");
+    setAttributes(
+        {"type": "email",
+         "name": "email-input",
+         "id": "email-input"}
+    )
+
+    //Message Input
+    const labelMessage = document.createElement("label");
+    labelMessage.setAttribute("for", "message-input");
+    const inputMessage = document.createElement("textarea");
+    inputMessage.setAttribute("name", "message-input");
+    inputMessage.setAttribute("id", "message-inut");
+    inputMessage.setAttribute("cols", "30");
+    inputMessage.setAttribute("")
 };
