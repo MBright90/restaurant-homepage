@@ -2,11 +2,6 @@ import './style.css';
 import DrinkData from './drinks-data.csv';
 import MenuData from './menu-data.csv';
 
-// // Importing images //
-// import GitIcon from './GitHub-Mark-Light-64px.png'
-// import HomeImage from './main-food-photo.jpeg'
-// import duckLegImage from '/duck-leg.jpg'
-
 console.log(DrinkData[1])
 console.log(MenuData)
 
@@ -47,7 +42,7 @@ const initTabLinks = () => {
             } else if (e.target === tabList[1]) {
                 createHomepage();
             } else {
-                console.log("Contact Us")
+                createContactPage();
             };
             e.composedPath()[0].classList.add("active");
         })
@@ -144,6 +139,14 @@ const createHomepage = () => {
 };
 
 const createMenuPage = () => {
+
+    // const updateMenuPictures = () => {
+    //     const menuPictures = document.querySelectorAll(".item-image");
+    //     menuPictures.forEach(picture => {
+    //         picture.style.backgroundImage = `url(./)`
+    //     })
+    // };
+
     const mainToRemove = document.querySelector("main");
     const mainContainer = document.createElement("main");
     mainContainer.style.flexDirection = "column";
@@ -165,7 +168,7 @@ const createMenuPage = () => {
 
         const itemImage = document.createElement("div");
         itemImage.classList.add("item-image");
-        itemImage.style.backgroundImage = `url('./'${menuItem[0]})`
+        itemImage.style.backgroundImage = `url('../src/${menuItem[0]}')`
 
         const itemTitle = document.createElement("div");
         itemTitle.classList.add("item-title");
@@ -232,87 +235,87 @@ const createContactPage = () => {
     const mainContainer = document.createElement("main");
     mainContainer.style.flexDirection = "row";
 
-    const createContactForm = () => {
-        const formContainer = document.createElement("div");
-        formContainer.classList.add("form-container");
+    const formContainer = document.createElement("div");
+    formContainer.classList.add("form-container");
 
-        const formHeader = document.createElement("h1");
-        formHeader.textContent = "Contact Us";
+    const formHeader = document.createElement("h1");
+    formHeader.textContent = "Contact Us";
 
-        const form = document.createElement("form");
-        form.setAttribute("method", "POST");
+    const form = document.createElement("form");
+    form.setAttribute("method", "POST");
 
-        //Name input
-        const labelName = document.createElement("label");
-        labelName.setAttribute("for", "name-input");
-        const inputName = document.createElement("input")
-        setAttributes(inputName, {
-            "type": "text",
-            "name": "name-input",
-            "id": "name-input",
-        });
+    //Name input
+    const labelName = document.createElement("label");
+    labelName.setAttribute("for", "name-input");
+    labelName.textContent = "Name"
+    const inputName = document.createElement("input")
+    setAttributes(inputName, {
+        "type": "text",
+        "name": "name-input",
+        "id": "name-input",
+    });
 
-        //Email input
-        const labelEmail = document.createElement("label");
-        labelEmail.setAttribute("for", "email-input")
-        const inputEmail = document.createElement("input");
-        setAttributes(inputEmail, {
-            "type": "email",
-            "name": "email-input",
-            "id": "email-input",
-        });
+    //Email input
+    const labelEmail = document.createElement("label");
+    labelEmail.setAttribute("for", "email-input")
+    labelEmail.textContent = "Email"
+    const inputEmail = document.createElement("input");
+    setAttributes(inputEmail, {
+        "type": "email",
+        "name": "email-input",
+        "id": "email-input",
+    });
 
-        //Message input
-        const labelMessage = document.createElement("label");
-        labelMessage.setAttribute("for", "message-input");
-        const inputMessage = document.createElement("textarea");
-        setAttributes(inputMessage, {
-            "name": "message-input",
-            "id": "message-input",
-            "cols": 30,
-            "rows": 20,
-        });
+    //Message input
+    const labelMessage = document.createElement("label");
+    labelMessage.setAttribute("for", "message-input");
+    labelMessage.textContent = "Message"
+    const inputMessage = document.createElement("textarea");
+    setAttributes(inputMessage, {
+        "name": "message-input",
+        "id": "message-input",
+        "cols": 30,
+        "rows": 20,
+    });
 
-        //Submit button
-        const submitFormButton = document.createElement("button");
-        submitFormButton.textContent = "Send";
-        submitFormButton.setAttribute("type", "submit");
+    //Submit button
+    const submitFormButton = document.createElement("button");
+    submitFormButton.textContent = "Send";
+    submitFormButton.setAttribute("type", "submit");
 
-        appendMultiple(form, [labelName, 
-                              inputName, 
-                              labelEmail, 
-                              inputEmail, 
-                              labelMessage, 
-                              inputMessage, 
-                              submitFormButton]
-        );
+    appendMultiple(form, [labelName, 
+                          inputName, 
+                          labelEmail, 
+                          inputEmail, 
+                          labelMessage, 
+                          inputMessage, 
+                          submitFormButton]
+    );
 
-        appendMultiple(formContainer, [formHeader, form]);
-        mainContainer.appendChild(formContainer)
-    };
+    appendMultiple(formContainer, [formHeader, form]);
+    mainContainer.appendChild(formContainer)
 
-    const createMap = () => {
-        const mapSectionContainer = classElementCreate("div", "map-container")
-        const mapHeader = document.createElement("h1");
-        mapHeader.textContent = "Find Us";
+    //Create map
+    const mapSectionContainer = classElementCreate("div", "map-container")
+    const mapHeader = document.createElement("h1");
+    mapHeader.textContent = "Find Us";
 
-        const map = classElementCreate("div", "map")
+    const map = classElementCreate("div", "map")
 
-        const address = classElementCreate("div", "address")
-        
-        const addressLineOne = document.createElement("p");
-        addressLineOne.textContent = "12 Hammer St.";
-        const addressLineTwo = document.createElement("p");
-        addressLineTwo.textContent = "Portsmouth";
-        const addressLineThree = document.createElement("p");
-        addressLineThree.textContent = "Love County";
-        const addressLineFour = document.createElement("p");
-        addressLineFour.textContent = "PM33 3RP";
+    const address = classElementCreate("div", "address")
+    
+    const addressLineOne = document.createElement("p");
+    addressLineOne.textContent = "12 Hammer St.";
+    const addressLineTwo = document.createElement("p");
+    addressLineTwo.textContent = "Portsmouth";
+    const addressLineThree = document.createElement("p");
+    addressLineThree.textContent = "Love County";
+    const addressLineFour = document.createElement("p");
+    addressLineFour.textContent = "PM33 3RP";
 
-        appendMultiple(address, [addressLineOne, addressLineTwo, addressLineThree, addressLineFour]);
-        appendMultiple(mapSectionContainer, [mapHeader, map, address]);
-        mainContainer.appendChild(mapSectionContainer);
-    }
+    appendMultiple(address, [addressLineOne, addressLineTwo, addressLineThree, addressLineFour]);
+    appendMultiple(mapSectionContainer, [mapHeader, map, address]);
+    mainContainer.appendChild(mapSectionContainer);
 
     mainToRemove.remove();
     document.body.appendChild(mainContainer);
