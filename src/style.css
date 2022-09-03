@@ -153,7 +153,7 @@ main .menu-stack .item-card:hover {
 }
 
 main .menu-stack .item-image {
-    background-image: url('./duck-leg.jpg');
+    /* background-image: url('./duck-leg.jpg'); */
     background-position: center;
     background-size: cover;
     height: 35%;
@@ -266,6 +266,7 @@ main .drinks-container .drinks-information .drink-item .drink-price {
 }
 
 .form-container form input[type=text],
+.form-container form input[type=email],
 .form-container form textarea {
     font-family: 'sinkinsans-regular', 'sans-serif';
     letter-spacing: 2px;
@@ -316,4 +317,12 @@ footer a {
     height: 30px;
     width: 30px;
     margin: auto;
+}
+
+@media screen and (max-width: 700px) {
+
+    main {
+        flex-direction: column !important;
+    }
+    
 }
