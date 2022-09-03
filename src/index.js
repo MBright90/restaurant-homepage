@@ -35,6 +35,13 @@ const initTabLinks = () => {
     tabList.forEach(tabLink => {
         tabLink.addEventListener("click", (e) => {
             clearActiveTabs(tabList);
+            if (e.target === tabList[0]) {
+                createMenuPage();
+            } else if (e.target === tabList[1]) {
+                console.log("Homepage")
+            } else {
+                console.log("Contact Us")
+            };
             e.composedPath()[0].classList.add("active");
         })
     })
@@ -54,9 +61,7 @@ const createHeader = () => {
     const headerLogo = document.createElement("h1");
     headerLogo.textContent = "Bellamy\'s";
 
-    const headerTabContainer = document.createElement("div");
-    headerTabContainer.classList.add("tab-links");
-
+    const headerTabContainer = classElementCreate("div", "tab-links");
     const listHolder = document.createElement("ul");
 
     const tabOne = document.createElement("li");
@@ -65,8 +70,7 @@ const createHeader = () => {
     tabOne.appendChild(menuLink);
 
     const tabTwo = document.createElement("li");
-    const homepageLink = document.createElement("a");
-    homepageLink.classList.add("active");
+    const homepageLink = classElementCreate("a", "active");
     homepageLink.textContent = "Homepage";
     tabTwo.appendChild(homepageLink);
 
