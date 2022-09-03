@@ -11,9 +11,9 @@ console.log(DrinkData[1])
 console.log(MenuData)
 
 const appendMultiple = (parent, children) => {
-    for(const child in children) {
+    children.forEach(child => {
         parent.appendChild(child);
-    };
+    });
 };
 
 const setAttributes = (element, attributeObject) => {
@@ -49,14 +49,11 @@ const createHeader = () => {
     contactLink.textContent = "Contact Us";
     tabThree.appendChild(contactLink);
 
-    listHolder.appendChild(tabOne);
-    listHolder.appendChild(tabTwo);
-    listHolder.appendChild(tabThree);
+    appendMultiple(listHolder, [tabOne, tabTwo, tabThree])
 
     headerTabContainer.appendChild(listHolder);
 
-    header.appendChild(headerLogo);
-    header.appendChild(headerTabContainer);
+    appendMultiple(header, [headerLogo, headerTabContainer])
 
     document.body.appendChild(header);
 };
@@ -87,11 +84,8 @@ const createHomepage = () => {
     const paraTwo = document.createElement("p");
     paraTwo.textContent = "So come on down to Bellamy's. Where the food, the staff and the atmosphere will be like visiting your oldest friends.";
 
-    informationContainer.appendChild(paraOne);
-    informationContainer.appendChild(paraTwo);
-
-    mainContainer.appendChild(homepageImage);
-    mainContainer.appendChild(informationContainer);
+    appendMultiple(informationContainer, [paraOne, paraTwo]);
+    appendMultiple(mainContainer, [homepageImage, informationContainer])
 
     mainToRemove.remove();
     document.body.appendChild(mainContainer);
@@ -133,10 +127,7 @@ const createMenuPage = () => {
         itemPrice.classList.add("item-price");
         itemPrice.textContent = menuItem[3];
 
-        itemCard.appendChild(itemImage);
-        itemCard.appendChild(itemTitle);
-        itemCard.appendChild(itemDetails);
-        itemCard.appendChild(itemPrice);
+        appendMultiple(itemCard, [itemImage, itemTitle, itemDetails, itemPrice])
 
         menuStack.appendChild(itemCard);
         }
@@ -171,19 +162,12 @@ const createMenuPage = () => {
         drinkPrice.textContent = drinkItem[2];
         drinkPrice.classList.add("drink-price");
 
-        drinkCard.appendChild(drinkTitle);
-        drinkCard.appendChild(drinkDescription);
-        drinkCard.appendChild(drinkPrice);
-
+        appendMultiple(drinkcard, [drinkTitle, drinkDescription, drinkPrice]);
         drinksInformation.appendChild(drinkCard);
     })
 
-    drinksContainer.appendChild(drinksImage);
-    drinksContainer.appendChild(drinksInformation);
-
-    mainContainer.appendChild(introContainer);
-    mainContainer.appendChild(menuStack);
-    mainContainer.appendChild(drinksContainer);
+    appendMultiple(drinksContainer, [drinksImage, drinksInformation]);
+    appendMultiple(mainContainer, [introContainer, menuStack, drinksContainer]);
 
     mainToRemove.remove();
     document.body.appendChild(mainContainer);
@@ -191,12 +175,6 @@ const createMenuPage = () => {
 };
 
 const createContactPage = () => {
-
-    const setAttributes = (element, attributeObject) => {
-        for(const key in attributeObject) {
-            element.setAttribute(key, attributeObject[key])
-        }
-    }
 
     const mainToRemove = document.querySelector("main");
     const mainContainer = document.createElement("main");
@@ -211,32 +189,39 @@ const createContactPage = () => {
     const form = document.createElement("form");
     form.setAttribute("method", "POST");
 
-    //Name field
+    //Name input
     const labelName = document.createElement("label");
     labelName.setAttribute("for", "name-input");
     const inputName = document.createElement("input")
-    setAttributes(
-        {"type": "text",
-         "name": "name-input",
-         "id": "name-input"}
-    )
+    setAttributes(inputName, {
+        "type": "text",
+        "name": "name-input",
+        "id": "name-input",
+    });
 
-    //Email field
+    //Email input
     const labelEmail = document.createElement("label");
     labelEmail.setAttribute("for", "email-input")
     const inputEmail = document.createElement("input");
-    setAttributes(
-        {"type": "email",
-         "name": "email-input",
-         "id": "email-input"}
-    )
+    setAttributes(inputEmail, {
+        "type": "email",
+        "name": "email-input",
+        "id": "email-input",
+    });
 
-    //Message Input
+    //Message input
     const labelMessage = document.createElement("label");
     labelMessage.setAttribute("for", "message-input");
     const inputMessage = document.createElement("textarea");
-    inputMessage.setAttribute("name", "message-input");
-    inputMessage.setAttribute("id", "message-inut");
-    inputMessage.setAttribute("cols", "30");
-    inputMessage.setAttribute("")
+    setAttributes(inputMessage, {
+        "name": "message-input",
+        "id": "message-input",
+        "cols": 30,
+        "rows": 20,
+    });
+
+    //Submit button
+    const submitFormButton = document.createElement("button");
+    submitFormButton.textContent = "Send";
+    submitFormButton.setAttribute("type", "submit");
 };
