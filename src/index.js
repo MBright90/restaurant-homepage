@@ -70,7 +70,7 @@ const createHeader = () => {
     tabOne.appendChild(menuLink);
 
     const tabTwo = document.createElement("li");
-    const homepageLink = classElementCreate("a", "active");
+    const homepageLink = document.createElement("a");
     homepageLink.textContent = "Homepage";
     tabTwo.appendChild(homepageLink);
 
@@ -224,7 +224,7 @@ const createContactPage = () => {
 
     const mainToRemove = document.querySelector("main");
     const mainContainer = document.createElement("main");
-    mainContainer.style.flexDirection = "row";
+    mainContainer.style.flexFlow = "row wrap";
 
     const formContainer = document.createElement("div");
     formContainer.classList.add("form-container");
