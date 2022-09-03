@@ -274,7 +274,7 @@ main .drinks-container .drinks-information .drink-item .drink-price {
     width: 400px;
 }
 
-.form-container form button {
+.form-container form button[type=submit] {
     align-self: flex-end;
     background-color: inherit;
     border: none;
