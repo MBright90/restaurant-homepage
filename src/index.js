@@ -1,6 +1,6 @@
 import './style.css';
-// import DrinkData from './drinks-data.csv';
-// import MenuData from './menu-data.csv';
+import DrinkData from './drinks-data.csv';
+import MenuData from './menu-data.csv';
 
 // // Importing images //
 // import GitIcon from './GitHub-Mark-Light-64px.png'
@@ -18,16 +18,34 @@ const appendMultiple = (parent, children) => {
 
 const setAttributes = (newElement, attributeObject) => {
     for(const key in attributeObject) {
-        newElement.setAttribute(key, attributeObject[key])
+    newElement.setAttribute(key, attributeObject[key])
     }
 };
 
 const classElementCreate = (newElement, ...args) => {
     const element = document.createElement(newElement);
-    for (let i = 1; i < args.length; i++) {
-        element.classList.add(args[i]);
-    };
+    args.forEach(arg => {
+        element.classList.add(arg);
+    })
     return element;
+};
+
+const initTabLinks = () => {
+    const tabList = document.querySelectorAll("li>a");
+    tabList.forEach(tabLink => {
+        tabLink.addEventListener("click", (e) => {
+            clearActiveTabs(tabList);
+            e.composedPath()[0].classList.add("active");
+        })
+    })
+}
+
+const clearActiveTabs = (tabList) => {
+    tabList.forEach(tabLink => {
+        if (tabLink.classList.contains("active")) {
+            tabLink.classList.remove("active");
+        };
+    });
 };
 
 const createHeader = () => {
@@ -64,6 +82,7 @@ const createHeader = () => {
     appendMultiple(header, [headerLogo, headerTabContainer])
 
     document.body.appendChild(header);
+    initTabLinks();
 };
 
 const createFooter = () => {
@@ -78,14 +97,24 @@ const createFooter = () => {
 };
 
 const createHomepage = () => {
-    const mainToRemove = document.querySelector("main");
+
+    const tabList = document.querySelectorAll("li>a")
+    tabList.forEach(tabLink => {
+        if (tabLink.classList.contains("active")) {
+            tabLink.classList.remove("active");
+        };
+    });
+
+    let mainToRemove = null;
+    if (document.querySelector("main")) {
+        mainToRemove = document.querySelector("main");
+    };
+
     const mainContainer = document.createElement("main");
     mainContainer.style.flexDirection = "row";
 
-    const homepageImage = document.createElement("div");
-    homepageImage.classList.add("main-image");
-
-    const informationContainer = document.createElement("div");
+    const homepageImage = classElementCreate("div", "main-image")
+    const informationContainer = classElementCreate("div", "information");
 
     const paraOne = document.createElement("p");
     paraOne.textContent = "We believe food is humanity's most loyal friend. At Bellamy's, we strive to show that friend just how much we love them. We do this by taking the utmost care with our ingredients, endeavouring to treat each part of your meal, no matter how small, with affection. We source local, sustainable ingredients that our chefs have personally taste tested at source to bring you the highest quality meals possible.";
@@ -95,7 +124,10 @@ const createHomepage = () => {
     appendMultiple(informationContainer, [paraOne, paraTwo]);
     appendMultiple(mainContainer, [homepageImage, informationContainer])
 
-    mainToRemove.remove();
+    if (mainToRemove) {
+        mainToRemove.remove();
+    };
+
     document.body.appendChild(mainContainer);
 };
 
@@ -179,7 +211,6 @@ const createMenuPage = () => {
 
     mainToRemove.remove();
     document.body.appendChild(mainContainer);
-
 };
 
 const createContactPage = () => {
@@ -273,3 +304,9 @@ const createContactPage = () => {
     mainToRemove.remove();
     document.body.appendChild(mainContainer);
 };
+
+//Initialize homepage
+
+createHeader();
+createHomepage();
+createFooter();
