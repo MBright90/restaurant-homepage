@@ -1,3 +1,4 @@
+import { arguments } from 'file-loader';
 import './style.css';
 // import DrinkData from './drinks-data.csv';
 // import MenuData from './menu-data.csv';
@@ -20,7 +21,15 @@ const setAttributes = (element, attributeObject) => {
     for(const key in attributeObject) {
         element.setAttribute(key, attributeObject[key])
     }
-}
+};
+
+const classElementCreate = (element, ...args) => {
+    const element = document.createElement(element);
+    for (let i = 1; i < args.length; i++) {
+        element.classList.add(args[i]);
+    };
+    return element;
+};
 
 const createHeader = () => {
     const header = document.createElement("header");
@@ -236,10 +245,15 @@ const createContactPage = () => {
         );
 
         appendMultiple(formContainer, [formHeader, form]);
+        mainContainer.appendChild(formContainer)
     };
 
     constCreateMap = () => {
-        
+        const mapSectionContainer = document.createElement("div");
+        mapSectionContainer.classList.add("map-container");
+
+        const map = document.createElement("div");
+        map.classList.add()
     }
 
 
