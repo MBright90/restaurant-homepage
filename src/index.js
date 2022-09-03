@@ -180,48 +180,67 @@ const createContactPage = () => {
     const mainContainer = document.createElement("main");
     mainContainer.style.flexDirection = "row";
 
-    const formContainer = document.createElement("div");
-    formContainer.classList.add("form-container");
+    const createContactForm = () => {
+        const formContainer = document.createElement("div");
+        formContainer.classList.add("form-container");
 
-    const formHeader = document.createElement("h1");
-    formHeader.textContent = "Contact Us";
+        const formHeader = document.createElement("h1");
+        formHeader.textContent = "Contact Us";
 
-    const form = document.createElement("form");
-    form.setAttribute("method", "POST");
+        const form = document.createElement("form");
+        form.setAttribute("method", "POST");
 
-    //Name input
-    const labelName = document.createElement("label");
-    labelName.setAttribute("for", "name-input");
-    const inputName = document.createElement("input")
-    setAttributes(inputName, {
-        "type": "text",
-        "name": "name-input",
-        "id": "name-input",
-    });
+        //Name input
+        const labelName = document.createElement("label");
+        labelName.setAttribute("for", "name-input");
+        const inputName = document.createElement("input")
+        setAttributes(inputName, {
+            "type": "text",
+            "name": "name-input",
+            "id": "name-input",
+        });
 
-    //Email input
-    const labelEmail = document.createElement("label");
-    labelEmail.setAttribute("for", "email-input")
-    const inputEmail = document.createElement("input");
-    setAttributes(inputEmail, {
-        "type": "email",
-        "name": "email-input",
-        "id": "email-input",
-    });
+        //Email input
+        const labelEmail = document.createElement("label");
+        labelEmail.setAttribute("for", "email-input")
+        const inputEmail = document.createElement("input");
+        setAttributes(inputEmail, {
+            "type": "email",
+            "name": "email-input",
+            "id": "email-input",
+        });
 
-    //Message input
-    const labelMessage = document.createElement("label");
-    labelMessage.setAttribute("for", "message-input");
-    const inputMessage = document.createElement("textarea");
-    setAttributes(inputMessage, {
-        "name": "message-input",
-        "id": "message-input",
-        "cols": 30,
-        "rows": 20,
-    });
+        //Message input
+        const labelMessage = document.createElement("label");
+        labelMessage.setAttribute("for", "message-input");
+        const inputMessage = document.createElement("textarea");
+        setAttributes(inputMessage, {
+            "name": "message-input",
+            "id": "message-input",
+            "cols": 30,
+            "rows": 20,
+        });
 
-    //Submit button
-    const submitFormButton = document.createElement("button");
-    submitFormButton.textContent = "Send";
-    submitFormButton.setAttribute("type", "submit");
+        //Submit button
+        const submitFormButton = document.createElement("button");
+        submitFormButton.textContent = "Send";
+        submitFormButton.setAttribute("type", "submit");
+
+        appendMultiple(form, [labelName, 
+                              inputName, 
+                              labelEmail, 
+                              inputEmail, 
+                              labelMessage, 
+                              inputMessage, 
+                              submitFormButton]
+        );
+
+        appendMultiple(formContainer, [formHeader, form]);
+    };
+
+    constCreateMap = () => {
+        
+    }
+
+
 };
