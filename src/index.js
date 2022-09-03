@@ -248,13 +248,31 @@ const createContactPage = () => {
         mainContainer.appendChild(formContainer)
     };
 
-    constCreateMap = () => {
+    const createMap = () => {
         const mapSectionContainer = document.createElement("div");
         mapSectionContainer.classList.add("map-container");
 
-        const map = document.createElement("div");
-        map.classList.add()
+        const mapHeader = document.createElement("h1");
+        mapHeader.textContent = "Find Us";
+
+        const map = classElementCreate("div", "map")
+
+        const address = classElementCreate("div", "address")
+        
+        const addressLineOne = document.createElement("p");
+        addressLineOne.textContent = "12 Hammer St.";
+        const addressLineTwo = document.createElement("p");
+        addressLineTwo.textContent = "Portsmouth";
+        const addressLineThree = document.createElement("p");
+        addressLineThree.textContent = "Love County";
+        const addressLineFour = document.createElement("p");
+        addressLineFour.textContent = "PM33 3RP";
+
+        appendMultiple(address, [addressLineOne, addressLineTwo, addressLineThree, addressLineFour]);
+        appendMultiple(mapSectionContainer, [mapHeader, map, address]);
+        mainContainer.appendChild(mapSectionContainer);
     }
 
-
+    mainToRemove.remove();
+    document.body.appendChild(mainContainer);
 };
