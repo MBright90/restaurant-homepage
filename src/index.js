@@ -2,9 +2,6 @@ import './style.css';
 import DrinkData from './drinks-data.csv';
 import MenuData from './menu-data.csv';
 
-console.log(DrinkData[1])
-console.log(MenuData)
-
 const appendMultiple = (parent, children) => {
     children.forEach(child => {
         parent.appendChild(child);
@@ -36,6 +33,7 @@ const initTabLinks = () => {
     const tabList = document.querySelectorAll("li>a");
     tabList.forEach(tabLink => {
         tabLink.addEventListener("click", (e) => {
+            console.log("This is happening")
             clearActiveTabs(tabList);
             if (e.target === tabList[0]) {
                 createMenuPage();
@@ -139,13 +137,6 @@ const createHomepage = () => {
 };
 
 const createMenuPage = () => {
-
-    // const updateMenuPictures = () => {
-    //     const menuPictures = document.querySelectorAll(".item-image");
-    //     menuPictures.forEach(picture => {
-    //         picture.style.backgroundImage = `url(./)`
-    //     })
-    // };
 
     const mainToRemove = document.querySelector("main");
     const mainContainer = document.createElement("main");
