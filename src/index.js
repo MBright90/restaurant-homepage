@@ -14,7 +14,7 @@ const setAttributes = (newElement, attributeObject) => {
     }
 };
 
-const classElementCreate = (newElement, ...args) => {
+const createElementClass = (newElement, ...args) => {
     const element = document.createElement(newElement);
     args.forEach(arg => {
         element.classList.add(arg);
@@ -23,9 +23,7 @@ const classElementCreate = (newElement, ...args) => {
 };
 
 const replaceFooter = () => {
-
-    let footerToRemove;
-    if (footerToRemove = document.querySelector("footer")) footerToRemove.remove();
+    if (document.querySelector("footer")) document.querySelector("footer").remove();
     createFooter();
 }
 
@@ -33,7 +31,6 @@ const initTabLinks = () => {
     const tabList = document.querySelectorAll("li>a");
     tabList.forEach(tabLink => {
         tabLink.addEventListener("click", (e) => {
-            console.log("This is happening")
             clearActiveTabs(tabList);
             if (e.target === tabList[0]) {
                 createMenuPage();
@@ -61,7 +58,7 @@ const createHeader = () => {
     const headerLogo = document.createElement("h1");
     headerLogo.textContent = "Bellamy\'s";
 
-    const headerTabContainer = classElementCreate("div", "tab-links");
+    const headerTabContainer = createElementClass("div", "tab-links");
     const listHolder = document.createElement("ul");
 
     const tabOne = document.createElement("li");
@@ -117,8 +114,8 @@ const createHomepage = () => {
     const mainContainer = document.createElement("main");
     mainContainer.style.flexDirection = "row";
 
-    const homepageImage = classElementCreate("div", "main-image")
-    const informationContainer = classElementCreate("div", "information");
+    const homepageImage = createElementClass("div", "main-image")
+    const informationContainer = createElementClass("div", "information");
 
     const paraOne = document.createElement("p");
     paraOne.textContent = "We believe food is humanity's most loyal friend. At Bellamy's, we strive to show that friend just how much we love them. We do this by taking the utmost care with our ingredients, endeavouring to treat each part of your meal, no matter how small, with affection. We source local, sustainable ingredients that our chefs have personally taste tested at source to bring you the highest quality meals possible.";
@@ -226,9 +223,8 @@ const createContactPage = () => {
     const mainContainer = document.createElement("main");
     mainContainer.style.flexFlow = "row wrap";
 
-    const formContainer = document.createElement("div");
-    formContainer.classList.add("form-container");
 
+    const formContainer = createElementClass("div", "form-container");
     const formHeader = document.createElement("h1");
     formHeader.textContent = "Contact Us";
 
@@ -287,14 +283,14 @@ const createContactPage = () => {
     mainContainer.appendChild(formContainer)
 
     //Create map
-    const mapSectionContainer = classElementCreate("div", "map-container")
+    const mapSectionContainer = createElementClass("div", "map-container")
     const mapHeader = document.createElement("h1");
     mapHeader.textContent = "Find Us";
 
-    const map = classElementCreate("iframe", "map")
+    const map = createElementClass("iframe", "map")
     map.setAttribute("src", "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ1UnKsCsFdkgR8CMUKuCjbF4&key=AIzaSyAUiJQbbR7baABDKDYiFTPF6dDsZChDTP8");
 
-    const address = classElementCreate("div", "address")
+    const address = createElementClass("div", "address")
     
     const addressLineOne = document.createElement("p");
     addressLineOne.textContent = "18 Bruton Pl.";
