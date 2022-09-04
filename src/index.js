@@ -11,21 +11,21 @@ const appendMultiple = (parent, children) => {
 const setAttributes = (newElement, attributeObject) => {
     for(const key in attributeObject) {
     newElement.setAttribute(key, attributeObject[key])
-    }
+    };
 };
 
 const createElementClass = (newElement, ...args) => {
     const element = document.createElement(newElement);
     args.forEach(arg => {
         element.classList.add(arg);
-    })
+    });
     return element;
 };
 
 const replaceFooter = () => {
     if (document.querySelector("footer")) document.querySelector("footer").remove();
     createFooter();
-}
+};
 
 const initTabLinks = () => {
     const tabList = document.querySelectorAll("li>a");
@@ -40,9 +40,9 @@ const initTabLinks = () => {
                 createContactPage();
             };
             e.composedPath()[0].classList.add("active");
-        })
-    })
-}
+        });
+    });
+};
 
 const clearActiveTabs = (tabList) => {
     tabList.forEach(tabLink => {
@@ -67,7 +67,7 @@ const createHeader = () => {
     tabOne.appendChild(menuLink);
 
     const tabTwo = document.createElement("li");
-    const homepageLink = document.createElement("a");
+    const homepageLink = createElementClass("a", "active");
     homepageLink.textContent = "Homepage";
     tabTwo.appendChild(homepageLink);
 
@@ -139,35 +139,27 @@ const createMenuPage = () => {
     const mainContainer = document.createElement("main");
     mainContainer.style.flexDirection = "column";
 
-    const introContainer = document.createElement("div");
-    introContainer.classList.add("menu-intro")
+    const introContainer = createElementClass("div", "menu-intro");
     const introSentence = document.createElement("p");
     introSentence.textContent = "Below is an example of a typical menu at Bellamy's. Due to the nature in which we source our ingredients, our menu is constantly evolving.";
     introContainer.appendChild(introSentence);
 
-
-    // Creating food menu grid
-    const menuStack = document.createElement("div");
-    menuStack.classList.add("menu-stack");
+    // Create food menu grid
+    const menuStack = createElementClass("div", "menu-stack");
 
     MenuData.forEach(menuItem => {
-        const itemCard = document.createElement("div");
-        itemCard.classList.add("item-card");
+        const itemCard = createElementClass("div", "item-card");
 
-        const itemImage = document.createElement("div");
-        itemImage.classList.add("item-image");
+        const itemImage = createElementClass("div", "item-image");
         itemImage.style.backgroundImage = `url('../src/${menuItem[0]}')`
 
-        const itemTitle = document.createElement("div");
-        itemTitle.classList.add("item-title");
+        const itemTitle = createElementClass("div", "item-title");
         itemTitle.textContent = menuItem[1];
 
-        const itemDetails = document.createElement("div");
-        itemDetails.classList.add("item-details");
+        const itemDetails = createElementClass("div", "item-details");
         itemDetails.textContent = menuItem[2];
 
-        const itemPrice = document.createElement("div");
-        itemPrice.classList.add("item-price");
+        const itemPrice = createElementClass("div", "Item-price");
         itemPrice.textContent = menuItem[3];
 
         appendMultiple(itemCard, [itemImage, itemTitle, itemDetails, itemPrice])
@@ -176,38 +168,30 @@ const createMenuPage = () => {
         }
     );
 
-    // creating drinks menu
-    const drinksContainer = document.createElement("div");
-    drinksContainer.classList.add("drinks-container");
-
-    const drinksImage = document.createElement("div");
-    drinksImage.classList.add("drinks-image");
-
-    const drinksInformation = document.createElement("div");
-    drinksInformation.classList.add("drinks-information");
+    // Create drinks menu
+    const drinksContainer = createElementClass("div", "drinks-container");
+    const drinksImage = createElementClass("div", "drinks-image");
+    const drinksInformation = createElementClass("div", "drinks-information");
     const drinksHeader = document.createElement("h1");
     drinksHeader.textContent = "Drinks";
 
     drinksInformation.appendChild(drinksHeader);
 
     DrinkData.forEach(drinkItem => {
-        const drinkCard = document.createElement("div");
-        drinkCard.classList.add("drink-item");
+        const drinkCard = createElementClass("div", "drink-item");
 
-        const drinkTitle = document.createElement("p");
+        const drinkTitle = createElementClass("p", "drink-title");
         drinkTitle.textContent = drinkItem[0];
-        drinkTitle.classList.add("drink-title");
 
         const drinkDescription = document.createElement("p");
         drinkDescription.textContent = drinkItem[1];
 
-        const drinkPrice = document.createElement("p");
+        const drinkPrice = createElementClass("p", "drink-price");
         drinkPrice.textContent = drinkItem[2];
-        drinkPrice.classList.add("drink-price");
 
         appendMultiple(drinkCard, [drinkTitle, drinkDescription, drinkPrice]);
         drinksInformation.appendChild(drinkCard);
-    })
+    });
 
     appendMultiple(drinksContainer, [drinksImage, drinksInformation]);
     appendMultiple(mainContainer, [introContainer, menuStack, drinksContainer]);
@@ -222,7 +206,6 @@ const createContactPage = () => {
     const mainToRemove = document.querySelector("main");
     const mainContainer = document.createElement("main");
     mainContainer.style.flexFlow = "row wrap";
-
 
     const formContainer = createElementClass("div", "form-container");
     const formHeader = document.createElement("h1");
