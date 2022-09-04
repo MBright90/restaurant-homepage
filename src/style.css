@@ -285,7 +285,7 @@ main .drinks-container .drinks-information .drink-item .drink-price {
 }
 
 .map-container .map {
-    background-color: red;
+    border: 2px solid #000000;
     height: 400px;
     width: 100%;
     margin: 20px 0;
