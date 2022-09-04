@@ -159,7 +159,7 @@ const createMenuPage = () => {
         const itemDetails = createElementClass("div", "item-details");
         itemDetails.textContent = menuItem[2];
 
-        const itemPrice = createElementClass("div", "Item-price");
+        const itemPrice = createElementClass("div", "item-price");
         itemPrice.textContent = menuItem[3];
 
         appendMultiple(itemCard, [itemImage, itemTitle, itemDetails, itemPrice])
