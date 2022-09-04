@@ -151,7 +151,7 @@ const createMenuPage = () => {
         const itemCard = createElementClass("div", "item-card");
 
         const itemImage = createElementClass("div", "item-image");
-        itemImage.style.backgroundImage = `url('../src/${menuItem[0]}')`
+        itemImage.style.backgroundImage = `url('./${menuItem[0]}')`
 
         const itemTitle = createElementClass("div", "item-title");
         itemTitle.textContent = menuItem[1];
