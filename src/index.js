@@ -291,18 +291,19 @@ const createContactPage = () => {
     const mapHeader = document.createElement("h1");
     mapHeader.textContent = "Find Us";
 
-    const map = classElementCreate("div", "map")
+    const map = classElementCreate("iframe", "map")
+    map.setAttribute("src", "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ1UnKsCsFdkgR8CMUKuCjbF4&key=AIzaSyAUiJQbbR7baABDKDYiFTPF6dDsZChDTP8");
 
     const address = classElementCreate("div", "address")
     
     const addressLineOne = document.createElement("p");
-    addressLineOne.textContent = "12 Hammer St.";
+    addressLineOne.textContent = "18 Bruton Pl.";
     const addressLineTwo = document.createElement("p");
-    addressLineTwo.textContent = "Portsmouth";
+    addressLineTwo.textContent = "Mayfair";
     const addressLineThree = document.createElement("p");
-    addressLineThree.textContent = "Love County";
+    addressLineThree.textContent = "London";
     const addressLineFour = document.createElement("p");
-    addressLineFour.textContent = "PM33 3RP";
+    addressLineFour.textContent = "W1J 6LY";
 
     appendMultiple(address, [addressLineOne, addressLineTwo, addressLineThree, addressLineFour]);
     appendMultiple(mapSectionContainer, [mapHeader, map, address]);
