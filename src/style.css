@@ -35,6 +35,7 @@ body {
     background-color: #e9e9e9b2;
     font-family: 'sinkinsans-regular', 'sans-serif';
     letter-spacing: 2px;
+    overflow-x: hidden;
 }
 
 /* Header styling */
